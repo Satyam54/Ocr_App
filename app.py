@@ -5,7 +5,7 @@ from PIL import Image
 pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 st.title("Optical Character Recognition (OCR)")
 st.text("Upload an image to extract text!")
-uploaded_file= st.file_uploader("Choose an image",type=["png","jpg","jpeg"])
+uploaded_file= st.sidebar.file_uploader("Choose an image",type=["png","jpg","jpeg"])
 if uploaded_file is not None:
   img= Image.open(uploaded_file)
   st.image(img,caption="Uploaded Image", use_column_width = True)
